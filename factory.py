@@ -21,14 +21,14 @@ class Factory(PopThread):
             small = len(self.small_box) % 8
 
             if belt == 4:
-                if Product_size >=50:
+                if Product_size <= 30:
                     self.px.setColor(big, 0, [255,255,0])
                     self.big_box.append(1)
                     if big == 7:
                         for i in range(8):
                             self.px.setColor(i, 0, [0,0,0])
                                                
-                elif Product_size <= 30:
+                elif Product_size >=50:
                     self.px.setColor(small, 7, [255,255,0])
                     self.small_box.append(1)
                     if small == 7:

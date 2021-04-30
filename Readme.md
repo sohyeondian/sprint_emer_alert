@@ -203,7 +203,7 @@
   ```python
   if big == 7:
     for i in range(8):
-    	self.px.setColor(i, 0, [0,0,0])
+      self.px.setColor(i, 0, [0,0,0])
   ```
 
     

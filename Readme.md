@@ -117,7 +117,7 @@
 
 ---
 
-1. Pop
+1. [Pop](https://pop-docs.readthedocs.io/en/latest/pop/)
 
    ``` python
    import pop
@@ -125,7 +125,7 @@
 
    - 센서를 이용해 데이터 측정
 
-2. Blynk
+2. [Blynk](https://github.com/blynkkk/lib-python)
 
    ```python
    import BlynkLib
@@ -136,7 +136,7 @@
 
    - MQTT
 
-3. mqtt
+3. [mqtt](https://github.com/eclipse/paho.mqtt.python)
 
    ```python
    import paho.mqtt.client

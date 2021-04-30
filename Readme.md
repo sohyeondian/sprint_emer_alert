@@ -34,7 +34,7 @@
 
 ---
 
-![image-20210429161743332](C:\Users\PC-03\AppData\Roaming\Typora\typora-user-images\image-20210429161743332.png)
+![network](https://user-images.githubusercontent.com/81665465/116642400-b53a5c00-a9a9-11eb-9cdd-44c310505297.png)
 
 - Device : PyC Basic
   - Blynk for Python v0.2.0(Linux)
@@ -72,7 +72,7 @@
 
 ---
 
-![image-20210430103019319](C:\Users\PC-03\AppData\Roaming\Typora\typora-user-images\image-20210430103019319.png)
+![program](https://user-images.githubusercontent.com/81665465/116642408-bec3c400-a9a9-11eb-9cea-df7d2a5da365.png)
 
 #### Status Bar
 
@@ -85,7 +85,7 @@
   - LCD widget : Temperature, Humidity
   - Gauge widget : Cds, Sound
 
-  <img src="C:\Users\PC-03\Downloads\Green.jpeg" alt="Green" style="zoom:50%;" />
+  <img src="https://user-images.githubusercontent.com/81665465/116642157-27f70780-a9a9-11eb-80d6-5434f06bf39c.jpeg" alt="Green" style="zoom:50%;" />
 
   
 
@@ -99,13 +99,13 @@
   - PiezoBuzzer :  경고 소리
   - Blynk - LCD : 긴급상황메시지 전송
 
-  <img src="C:\Users\PC-03\Downloads\949BA829-A765-48F0-B01E-17165620BBC0.jpeg" alt="949BA829-A765-48F0-B01E-17165620BBC0" style="zoom: 25%;" />
+  <img src="https://user-images.githubusercontent.com/81665465/116642257-5bd22d00-a9a9-11eb-8fc9-bea234d7cf82.jpeg" alt="949BA829-A765-48F0-B01E-17165620BBC0" style="zoom: 25%;" />
 
 - Blynk Application 
 
   - LCD widget : Device 메시지 출력
 
-  <img src="C:\Users\PC-03\Downloads\Red2.jpeg" alt="Red2" style="zoom:50%;" />
+  ![Red2](https://user-images.githubusercontent.com/81665465/116642290-73111a80-a9a9-11eb-8066-9fb819ad49cf.jpeg)
 
 - PC
 

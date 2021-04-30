@@ -200,11 +200,11 @@
 
   - 분류된 상품은 big_box , small_box 리스트가 가지고 있음
 
-    ```python
-    if big == 7:
-    	for i in range(8):
-    		self.px.setColor(i, 0, [0,0,0])
-    ```
+  ```python
+  if big == 7:
+  	for i in range(8):
+  		self.px.setColor(i, 0, [0,0,0])
+  ```
 
     
 

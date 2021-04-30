@@ -28,7 +28,7 @@ class Factory(PopThread):
                         for i in range(8):
                             self.px.setColor(i, 0, [0,0,0])
                                                
-                elif Product_size >=50:
+                elif Product_size >=31:
                     self.px.setColor(small, 7, [255,255,0])
                     self.small_box.append(1)
                     if small == 7:

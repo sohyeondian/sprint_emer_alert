@@ -66,7 +66,9 @@
 
 
 
+### 프로그램 구조
 
+---
 
 ![program](https://user-images.githubusercontent.com/81665465/116642968-f41ce180-a9aa-11eb-81e7-74570467e6c0.png)
 

@@ -75,7 +75,7 @@
 
 ---
 
-** 긴급 상황을 직접 발생 시키기 어려우므로 Blynk Application의 버튼 사용
+**긴급 상황을 직접 발생 시키기 어려우므로 Blynk Application의 버튼 사용**
 
 ![program](https://user-images.githubusercontent.com/81665465/116642968-f41ce180-a9aa-11eb-81e7-74570467e6c0.png)
 
@@ -85,7 +85,9 @@
 
 - Device : 가상 공장 운영
 
-![Pixel Display](https://user-images.githubusercontent.com/81665465/116645829-9c35a900-a9b1-11eb-8759-4bd15cbac01b.png)
+  ![Pixel Display](https://user-images.githubusercontent.com/81665465/116645829-9c35a900-a9b1-11eb-8759-4bd15cbac01b.png)
+
+
 
 - Blynk Application : 센서 측정 값 출력
 

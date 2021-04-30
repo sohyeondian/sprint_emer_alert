@@ -1,18 +1,15 @@
 # 긴급 상황 알림
 
--------
-
 
 
 ### 목적
 
 ---
 
-#### 긴급 상황 발생 시 통신 및 센서 제어
+#### 여러 센서 모니터링 및 작업 환경에서 긴급 상황 발생 시 통신 및 센서 제어
 
 - 긴급 상황 : 화재, 전압 등의 센서 측정 중 감지할 수 있는 상황
 
-  ** 긴급 상황을 직접 발생 시키기 어려우므로 Blynk Application의 버튼 사용
 
 
 
@@ -22,9 +19,17 @@
 
 ---
 
+**가상 공장 시뮬레이션**
+
 - 가상의 공장 환경 구축
 - Pixcel Display를 이용한 컨베이어 벨트 운영 환경
-- Position Sensitive Device 센서를 이용 양쪽으로 분류
+- Pixcel을 하나의 상품으로 가정
+- Psd(Position Sensitive Device)센서 이용
+
+![factory](https://user-images.githubusercontent.com/81665465/116645826-9b047c00-a9b1-11eb-9225-588e693e0f93.png)
+
+1. 거리 센서로 상품의 사이즈 측정
+2. 크기 별로 나누어 적재 
 
 
 
@@ -70,6 +75,8 @@
 
 ---
 
+**긴급 상황을 직접 발생 시키기 어려우므로 Blynk Application의 버튼 사용**
+
 ![program](https://user-images.githubusercontent.com/81665465/116642968-f41ce180-a9aa-11eb-81e7-74570467e6c0.png)
 
 #### Status Bar
@@ -77,6 +84,10 @@
 **<span style="color:green">GREEN</span>**
 
 - Device : 가상 공장 운영
+
+  ![Pixel Display](https://user-images.githubusercontent.com/81665465/116645829-9c35a900-a9b1-11eb-8759-4bd15cbac01b.png)
+
+
 
 - Blynk Application : 센서 측정 값 출력
 
@@ -152,13 +163,50 @@
 
 ---
 
-#### Factory
+#### Virtual Factory
 
-**가상 공장 시뮬레이션**
+**Factory.py**
 
+- Thread : 온,습도 및 기타 센서와 별도로 실행되어야 함
 
+- big_box , small_box : 상품을 두 사이즈로 분류
 
+  ```python
+  class Factory(PopThread):
+      def __init__(self):
+          super().__init__()
+          self.px=PixelDisplay()
+          self.psd=Psd()
+          self.big_box = []
+          self.small_box = []
+  ```
 
+  
+
+- 상품 사이즈 별 분류
+
+  - 센서와의 거리가 가까울 수록 물체의 크기가 큰 것으로 간주
+  - 테스트 환경에서 확인하기 위해 임의로 기준 값 30 설정
+  - Product_size : psd 센서 값
+
+  ```python
+  if Product_size <= 30:
+  ```
+
+- 상품 적재 : 픽셀 디스플레이 첫 행, 마지막 행에 표시
+  - 최대 적재량  : 픽셀 디스플레이(8*8) 중 하나의 행, 8로 설정
+
+  - 상품이 적재될 수 있는 범위 만큼 차면 RGB 값을 0으로 만들어 픽셀 디스플레이 리셋
+
+  - 분류된 상품은 big_box , small_box 리스트가 가지고 있음
+
+    ```python
+    if big == 7:
+    	for i in range(8):
+    		self.px.setColor(i, 0, [0,0,0])
+    ```
+
+    
 
 
 
@@ -219,27 +267,41 @@
     PiezoBuzzer : 소리내기
 
     Oled : "WARNING" 출력
-
-
-  ``` python
-  def run(self):
-      self.__oled.clearDisplay()
-      self.__oled.setCursor(40,25)
-      self.__leds.allOff()
-      time.sleep(.5)
-      self.__leds.allOn()
-      self.__oled.print("WARNING")
-      self.__pb.tone(3,2,1)
-      time.sleep(.5)
-  ```
-
-
+    
+    ```python
+    def run(self):
+        self.__oled.clearDisplay()
+        self.__oled.setCursor(40,25)
+        self.__leds.allOff()
+        time.sleep(.5)
+        self.__leds.allOn()
+        self.__oled.print("WARNING")
+        self.__pb.tone(3,2,1)
+        time.sleep(.5)
+    ```
 
 
 
+PC
 
+- pc_client.py
 
+  - 회사 모든 지역의 긴급상황을 받을 수 있게 구독 환경 설정
 
+    ```python
+    client.subscribe("SODA/+/EMERGENCY")
+    ```
+
+  - 날짜, 지역, 필요한 메시지만 출력
+
+    ```python
+    def do_message(client, userdata, message):
+        date = time.strftime('%Y-%m-%d %X',time.localtime(time.time()))
+        topic = message.topic.split("/")
+        print(f"[{date}] {topic[1]} : {message.payload.decode()}")
+    ```
+
+    
 
 
 
@@ -248,10 +310,11 @@
 
 ---
 
-
 연결된 모든 기기에 알림을 보내므로 빠른 대처 가능
 
 PC의 경우, 해당 알림을 받아 바로 신고하는 프로그램을 만드는 등의 **확장 가능**
+
+현재는 버튼을 이용해서 긴급 상황을 가정했지만 온도, 가스 및 기타 센서 사용하여 다양한 가정 및 산업현장에 접목 가능
 
 
 

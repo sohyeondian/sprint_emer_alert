@@ -34,7 +34,7 @@
 
 ---
 
-![network](https://user-images.githubusercontent.com/81665465/116642400-b53a5c00-a9a9-11eb-9cdd-44c310505297.png)
+![network](https://user-images.githubusercontent.com/81665465/116642954-ec5d3d00-a9aa-11eb-9d42-805feb56234a.png)
 
 - Device : PyC Basic
   - Blynk for Python v0.2.0(Linux)
@@ -68,11 +68,7 @@
 
 
 
-### 프로그램 구조
-
----
-
-![program](https://user-images.githubusercontent.com/81665465/116642408-bec3c400-a9a9-11eb-9cea-df7d2a5da365.png)
+![program](https://user-images.githubusercontent.com/81665465/116642968-f41ce180-a9aa-11eb-81e7-74570467e6c0.png)
 
 #### Status Bar
 
@@ -85,7 +81,7 @@
   - LCD widget : Temperature, Humidity
   - Gauge widget : Cds, Sound
 
-  <img src="https://user-images.githubusercontent.com/81665465/116642157-27f70780-a9a9-11eb-80d6-5434f06bf39c.jpeg" alt="Green" style="zoom:50%;" />
+  ![Green](https://user-images.githubusercontent.com/81665465/116642941-e4050200-a9aa-11eb-90c6-65eff32f4889.jpeg)
 
   
 
@@ -99,13 +95,13 @@
   - PiezoBuzzer :  경고 소리
   - Blynk - LCD : 긴급상황메시지 전송
 
-  <img src="https://user-images.githubusercontent.com/81665465/116642257-5bd22d00-a9a9-11eb-8fc9-bea234d7cf82.jpeg" alt="949BA829-A765-48F0-B01E-17165620BBC0" style="zoom: 25%;" />
+  ![emer](https://user-images.githubusercontent.com/81665465/116642917-da7b9a00-a9aa-11eb-99cd-77b1176b0889.jpeg)
 
 - Blynk Application 
 
   - LCD widget : Device 메시지 출력
 
-  ![Red2](https://user-images.githubusercontent.com/81665465/116642290-73111a80-a9a9-11eb-8066-9fb819ad49cf.jpeg)
+  ![Red2](https://user-images.githubusercontent.com/81665465/116642981-fa12c280-a9aa-11eb-967b-ecf81907abbb.jpeg)
 
 - PC
 
